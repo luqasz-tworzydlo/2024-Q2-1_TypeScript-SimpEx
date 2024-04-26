@@ -1,7 +1,7 @@
 import { Person } from "./C2_person"
 
 export class PersonList {
-    private people: Person[]
+    private people: Person[] = []
 
     public addPerson(person: Person) {
         this.people.push(person)

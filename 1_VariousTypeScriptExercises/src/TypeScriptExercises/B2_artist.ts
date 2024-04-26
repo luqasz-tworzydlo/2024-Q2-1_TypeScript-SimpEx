@@ -11,7 +11,20 @@ export class Artist {
         this.songs.push(title)
     }
 
-    public toString(): string {
-        return this.name + "\n" + this.songs
+    public removeSong(title: string) {
+        this.songs = this.songs.filter(song => song !== title);
     }
+
+    // Our second [improved] toString Method
+    public toString(): string {
+        const formattedSongs = this.songs.map(song => ` -> ${song}`).join("\n");
+        return `=> Our artist: ${this.name}\n=> List of songs:\n${formattedSongs}\n`;
+    }
+
+    // Our first toString Method
+    /*
+    public toString(): string {
+        return `=> Our artist: ${this.name}\n=> List of songs:\n${this.songs.join("\n")}`;
+    }
+    */
 }
